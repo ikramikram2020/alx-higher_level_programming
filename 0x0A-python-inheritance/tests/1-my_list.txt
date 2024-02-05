@@ -1,0 +1,83 @@
+Test for 1-my_list.py
+---------------------
+
+MyList = __import__('1-my_list').MyList
+
+# Test Case 0: Import
+>>> MyList = __import__('1-my_list').MyList
+>>>
+
+# Test Case 1: Common case
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>>
+
+# Test Case 2: Not defined object
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list2.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'my_list2' is not defined
+>>>
+
+# Test Case 3: Passed a list
+>>> a = [1, 9, 4]
+>>> my_list = MyList(a)
+>>> my_list.print_sorted()
+[1, 4, 9]
+>>>
+
+# Test Case 4: Strings in the list
+>>> my_list = MyList()
+>>> my_list.append("apple")
+>>> my_list.append("banana")
+>>> my_list.append("orange")
+>>> my_list.print_sorted()
+['apple', 'banana', 'orange']
+>>>
+
+# Test Case 5: Empty list
+>>> a = []
+>>> my_list = MyList(a)
+>>> my_list.print_sorted()
+[]
+>>>
+
+# Test Case 6: Unique number
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.print_sorted()
+[1]
+>>> print(my_list)
+[1]
+>>>
+
+# Test Case 7: Parent object
+>>> my_list = [1, 2, 3]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'print_sorted'
+>>>
+
+# Test Case 8: Negative numbers
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(5)
+>>> my_list.append(1)
+>>> my_list.append(-1)
+>>> my_list.append(51)
+>>> my_list.append(-5)
+>>> my_list.print_sorted()
+[-5, -1, 1, 5, 51]
+>>>
